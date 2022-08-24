@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoApp.Views.RegisterPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="yash_logo.png"
+                HeightRequest="100"
+                HorizontalOptions="Center" />
+
+            <Entry x:Name="Email"
+                   Placeholder="Email-Id"
+                   Text="{Binding EmailId}"/>
+
+            <Entry x:Name="Password"
+                   Placeholder="Password"
+                   IsPassword="True"
+                   MaxLength="7"
+                   Text="{Binding Password}"/>
+
+            <Entry x:Name="ConfirmPassword"
+                   Placeholder="Confirm Password"
+                   IsPassword="True"
+                   MaxLength="7"
+                   Text="{Binding ConfirmPassword}"/>
+
+            <Button
+                x:Name="RegisterBtn"
+                Text="Register"
+                Command="{Binding RegisterCommand}"/>
+
+            <Label
+                x:Name="errorLbl"
+                HorizontalOptions="Center"
+                Text="{Binding ErrorMsg}"
+                TextColor="Red"
+                IsVisible="{Binding IsErrorVisible}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
