@@ -3,6 +3,7 @@
 //      Copyright (c) YASH Technologies. All rights reserved.
 //  </copyright>
 // -----------------------------------------------------------------------
+using DemoApp.Views;
 using System.Windows.Input;
 
 namespace DemoApp.ViewModels
@@ -106,6 +107,7 @@ namespace DemoApp.ViewModels
                 IsErrorVisible = true;
                 ErrorMsg = "Fields can not be empty";
             }
+            await Shell.Current.Navigation.PushAsync(new TestListPage());
         }
     }
 }

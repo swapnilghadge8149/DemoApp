@@ -50,12 +50,20 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\yash_logo.svg" />
+	  <None Remove="TestList.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="TestList.json" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Folder Include="Interfaces\" />
-	  <Folder Include="Models\" />
 	  <Folder Include="Database\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -66,6 +74,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Views\RegisterPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\TestListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

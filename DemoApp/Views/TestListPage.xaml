@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoApp.Views.TestListPage"
+             Title="Test List">
+    <CollectionView x:Name="TestCollectionView" Margin="0"
+                        ItemsSource="{Binding TestList}" 
+                        SelectionMode="Single"                
+                        SelectionChangedCommand="{Binding TestListTapCommand}" 
+                        SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference TestCollectionView}}"
+                        HorizontalOptions="FillAndExpand" 
+                        BackgroundColor="White">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <VerticalStackLayout HorizontalOptions="FillAndExpand" Spacing="0" Padding="0" Margin="7" BackgroundColor="White">
+                    <Grid VerticalOptions="Center" BackgroundColor="White">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                         </Grid.ColumnDefinitions>
+                        <BoxView Color="GreenYellow" Grid.Column="0" WidthRequest="5"/>
+                        <Label Text="{Binding test_name}" Grid.Column="1" FontAttributes="Bold" FontSize="17" TextColor="Black" Margin="15,0,0,7"/>
+                    </Grid>
+                    <BoxView Color="LightGray" HeightRequest="1"/>
+                </VerticalStackLayout>
+            </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+</ContentPage>

@@ -1,0 +1,27 @@
+﻿{
+  "testListResponse": {
+    "status_code": "100",
+    "testList": [
+      {
+        "test_id": "1",
+        "test_name": "Core Java"
+      },
+      {
+        "test_id": "2",
+        "test_name": "Advance Java"
+      },
+      {
+        "test_id": "3",
+        "test_name": "C#"
+      },
+      {
+        "test_id": "4",
+        "test_name": "Xamarin"
+      },
+      {
+        "test_id": "5",
+        "test_name": "Android"
+      }
+    ]
+  }
+}
