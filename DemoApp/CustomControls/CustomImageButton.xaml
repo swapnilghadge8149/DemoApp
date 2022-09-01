@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             HorizontalOptions="FillAndExpand"
+             x:Class="DemoApp.CustomControls.CustomImageButton">
+    <ContentView.Content>
+        <Frame CornerRadius="5" 
+               x:Name="myFrame" 
+               HorizontalOptions="FillAndExpand" 
+               VerticalOptions="Start"
+               Margin="2" 
+               HasShadow="True" 
+               Padding="10" >
+
+            <HorizontalStackLayout
+                       BackgroundColor="Transparent" 
+                       x:Name="stack">
+                <Image x:Name="leftBtnIcon" 
+                       HeightRequest="20" 
+                       WidthRequest="20" 
+                       IsVisible="false"
+                       HorizontalOptions="Start"
+                      />
+                <Label x:Name="btnText" 
+                       HorizontalOptions="Start" 
+                       TextColor="#000" 
+                       Text="{Binding Text}"
+                       Margin="5,0,5,0"
+                       BackgroundColor="Transparent"
+                       FontSize="16"/>
+
+                <Image x:Name="rightBtnIcon" 
+                       HeightRequest="20" 
+                       WidthRequest="20" 
+                        IsVisible="false"
+                       HorizontalOptions="End"
+                      />
+            </HorizontalStackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

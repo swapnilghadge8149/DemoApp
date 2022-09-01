@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:DemoApp.CustomControls"
+             x:Class="DemoApp.Views.QuestionsPage"
+             Title="Questions">
+    <VerticalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="30">
+        <Grid ColumnDefinitions="Auto,*">
+            <HorizontalStackLayout Grid.Column="0" HorizontalOptions="Start">
+                <Label Text="Q. " FontSize="13" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label x:Name="QuesCountLbl" Text="{Binding QuesCnt}"  HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Grid.Column="1" HorizontalOptions="End">
+                <Label Text="Correct Ans: "  FontSize="13" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label x:Name="CorrectAnsCountLbl" Text="{Binding CorrectCnt}" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+            </HorizontalStackLayout>
+        </Grid>
+        <Grid ColumnDefinitions="Auto,*">
+            <HorizontalStackLayout Grid.Column="0" HorizontalOptions="Start">
+                <Label Text="Time: " FontSize="13" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label x:Name="TimeCountLbl" Text="{Binding QuesTime}" Grid.Row="0"  Grid.Column="0"  HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Grid.Column="1" HorizontalOptions="End">
+                <Label Text="Wrong Ans: "  FontSize="13" HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+                <Label x:Name="WrongAnsCountLbl" Grid.Column="1" Text="{Binding WrongCnt}" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+            </HorizontalStackLayout>
+        </Grid>
+        <Label Text="{Binding Question}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"/>
+        <ScrollView Orientation="Vertical" HorizontalOptions="FillAndExpand" >
+            <VerticalStackLayout HorizontalOptions="FillAndExpand" IsEnabled="{Binding IsOptionSelectEnabled}">
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" >
+                    <controls:CustomImageButton x:Name="Opt1Btn" Grid.Row="0" LeftImage="next.png" Text="{Binding Opt1}" Margin="0,5,0,5"  
+                              TextColor="#fff" FrameBackgroundColor="#ed872d" Command="{Binding OptionSelectedCommand}" CommandParam ="{Binding  Opt1}"/>
+                    <controls:CustomImageButton x:Name="Opt2Btn" Grid.Row="1" LeftImage="next.png" Text="{Binding Opt2}" Margin="0,5,0,5"  
+                              TextColor="#fff" FrameBackgroundColor="#ed872d" Command="{Binding OptionSelectedCommand}" CommandParam ="{Binding Source={x:Reference Opt2Btn}}"/>
+                    <controls:CustomImageButton x:Name="Opt3Btn"  Grid.Row="2" LeftImage="next.png" Text="{Binding Opt3}" Margin="0,5,0,5"  
+                              TextColor="#fff" FrameBackgroundColor="#ed872d" Command="{Binding OptionSelectedCommand}" CommandParam ="{Binding Source={x:Reference Opt3Btn}}"/>
+                    <controls:CustomImageButton x:Name="Opt4Btn" Grid.Row="3" LeftImage="next.png" Text="{Binding Opt4}" Margin="0,5,0,5" 
+                              TextColor="#fff" FrameBackgroundColor="#ed872d" Command="{Binding OptionSelectedCommand}" CommandParam ="{Binding Source={x:Reference Opt4Btn}}"/>
+                </Grid>
+                <Grid RowDefinitions="Auto,*" HorizontalOptions="FillAndExpand" IsEnabled="{Binding IsNextBtnEnabled}">
+                    <controls:CustomImageButton Text="Quit" LeftImage ="quit.png" WidthRequest="80"  HorizontalOptions="Start" Margin="0,5,0,5" TextColor="#fff" FrameBackgroundColor="#33e590" Command="{Binding QuitBtnClickedCommand}"/>
+                    <controls:CustomImageButton Text="Next" RightImage="next.png" WidthRequest="80"  HorizontalOptions="End" Margin="0,5,0,5" TextColor="#fff" FrameBackgroundColor="#33e590" Command="{Binding NextBtnClickedCommand}"/>
+                </Grid>
+            </VerticalStackLayout>
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>

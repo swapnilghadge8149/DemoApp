@@ -95,6 +95,7 @@ namespace DemoApp.ViewModels
                 if (Password.Equals(ConfirmPassword))
                 {
                     //todo db operations
+                    await Shell.Current.Navigation.PushAsync(new TestListPage());
                 }
                 else
                 {
@@ -107,7 +108,6 @@ namespace DemoApp.ViewModels
                 IsErrorVisible = true;
                 ErrorMsg = "Fields can not be empty";
             }
-            await Shell.Current.Navigation.PushAsync(new TestListPage());
         }
     }
 }

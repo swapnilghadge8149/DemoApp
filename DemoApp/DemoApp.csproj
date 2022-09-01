@@ -49,6 +49,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\correct.svg" />
+	  <None Remove="Resources\Images\next.svg" />
+	  <None Remove="Resources\Images\quit.svg" />
+	  <None Remove="Resources\Images\wrong.svg" />
 	  <None Remove="Resources\Images\yash_logo.svg" />
 	  <None Remove="TestList.json" />
 	</ItemGroup>
@@ -67,13 +71,25 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="CustomControls\CustomImageButton.xaml.cs">
+	    <DependentUpon>CustomImageButton.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\RegisterPage.xaml.cs">
 	    <DependentUpon>RegisterPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="CustomControls\CustomImageButton.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\QuestionsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\RegisterPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ShowTestScorePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\TestListPage.xaml">

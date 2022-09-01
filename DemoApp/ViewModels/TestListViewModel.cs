@@ -4,6 +4,7 @@
 //  </copyright>
 // -----------------------------------------------------------------------
 using DemoApp.Models;
+using DemoApp.Views;
 using Newtonsoft.Json;
 using System.Reflection;
 using System.Windows.Input;
@@ -59,10 +60,10 @@ namespace DemoApp.ViewModels
         /// Handle TestList Tapped event
         /// </summary>
         /// <param name="obj"></param>
-        private void OnTestListTapped(object obj)
+        private async void OnTestListTapped(object obj)
         {
             var testItem = obj as TestList;
-            //ToDO
+            await Shell.Current.Navigation.PushAsync(new QuestionsPage());
         }
     }
 }
